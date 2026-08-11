@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Sword of Solidarity",
+    "level": 9,
+    "race": "Human",
+    "class": "Fighter",
+    "npc": "Master Roien",
+    "location": "Talking Island",
+    "reward": "Weapon / Adena"
+  },
+  {
+    "name": "Letters of Love",
+    "level": 2,
+    "race": "Human",
+    "class": "All",
+    "npc": "Maria",
+    "location": "Talking Island",
+    "reward": "Adena / Items"
+  },
+  {
+    "name": "Path of the Warrior",
+    "level": 20,
+    "race": "Human",
+    "class": "Fighter",
+    "npc": "Master Auron",
+    "location": "Gludio",
+    "reward": "Warrior Class"
+  }
+]
