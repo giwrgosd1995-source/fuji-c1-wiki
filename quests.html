@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Fuji C1 Wiki - Quests</title>
+
+
+<style>
+
+body {
+    margin:0;
+    background:#111;
+    color:#ddd;
+    font-family:Georgia, serif;
+}
+
+
+header {
+
+height:90px;
+background:linear-gradient(#1f1b15,#090909);
+border-bottom:2px solid #9b7b32;
+
+display:flex;
+align-items:center;
+padding-left:40px;
+
+}
+
+
+.logo {
+
+font-size:34px;
+color:#d4af37;
+
+}
+
+
+
+.menu {
+
+background:#151515;
+padding:15px;
+text-align:center;
+
+}
+
+
+.menu a {
+
+color:#bbb;
+text-decoration:none;
+margin:20px;
+
+}
+
+
+.menu a:hover {
+
+color:#d4af37;
+
+}
+
+
+
+.container {
+
+padding:40px;
+
+}
+
+
+
+h1,h2 {
+
+color:#d4af37;
+
+}
+
+
+
+.search {
+
+width:100%;
+padding:15px;
+
+background:#222;
+border:1px solid #555;
+
+color:white;
+
+font-size:16px;
+
+}
+
+
+
+.filters {
+
+margin-top:25px;
+
+background:#181818;
+
+border:1px solid #66501d;
+
+padding:20px;
+
+border-radius:10px;
+
+}
+
+
+
+select {
+
+background:#222;
+color:white;
+
+padding:10px;
+
+margin:10px;
+
+}
+
+
+
+
+.quest {
+
+background:#181818;
+
+border:1px solid #444;
+
+border-left:5px solid #d4af37;
+
+padding:20px;
+
+margin-top:20px;
+
+border-radius:8px;
+
+}
+
+
+
+.quest h2 {
+
+margin-top:0;
+
+}
+
+
+
+.tag {
+
+display:inline-block;
+
+background:#333;
+
+padding:5px 10px;
+
+margin:5px;
+
+border-radius:5px;
+
+color:#d4af37;
+
+}
+
+
+
+footer {
+
+text-align:center;
+padding:20px;
+color:#777;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+
+📜 Fuji C1 Wiki - Quest Database
+
+</div>
+
+
+</header>
+
+
+
+<div class="menu">
+
+<a href="index.html">Home</a>
+
+<a href="classes.html">Classes</a>
+
+<a href="quests.html">Quests</a>
+
+</div>
+
+
+
+
+<div class="container">
+
+
+<h1>📜 Lineage II Chronicle 1 Quests</h1>
+
+
+<p>
+
+Complete quest database for C1 x1 servers.
+
+</p>
+
+
+
+
+<input class="search" placeholder="Search Quest...">
+
+
+
+
+
+<div class="filters">
+
+
+<h2>Filters</h2>
+
+
+<select>
+
+<option>All Races</option>
+
+<option>Human</option>
+
+<option>Elf</option>
+
+<option>Dark Elf</option>
+
+<option>Orc</option>
+
+<option>Dwarf</option>
+
+</select>
+
+
+
+
+<select>
+
+<option>All Classes</option>
+
+<option>Fighter</option>
+
+<option>Mystic</option>
+
+<option>Warrior</option>
+
+<option>Knight</option>
+
+</select>
+
+
+
+
+<select>
+
+<option>All Levels</option>
+
+<option>1-10</option>
+
+<option>10-20</option>
+
+<option>20-40</option>
+
+<option>40+</option>
+
+</select>
+
+
+
+</div>
+
+<h1>All C1 Quests</h1>
+
+<div id="quest-list">
+
+</div>
+
+
+
+<footer>
+
+Fuji C1 Wiki © Chronicle 1 x1
+
+</footer>
+
+
+<script src="js/quests.js"></script>
+</body>
+
+</html>
