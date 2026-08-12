@@ -1,0 +1,317 @@
+{
+  "Human": {
+    "base": [
+      {
+        "name": "Human Fighter",
+        "type": "Fighter"
+      },
+      {
+        "name": "Human Mystic",
+        "type": "Mystic"
+      }
+    ],
+    "classes": [
+      {
+        "name": "Warrior",
+        "parent": "Human Fighter",
+        "level": 20
+      },
+      {
+        "name": "Knight",
+        "parent": "Human Fighter",
+        "level": 20
+      },
+      {
+        "name": "Rogue",
+        "parent": "Human Fighter",
+        "level": 20
+      },
+      {
+        "name": "Wizard",
+        "parent": "Human Mystic",
+        "level": 20
+      },
+      {
+        "name": "Cleric",
+        "parent": "Human Mystic",
+        "level": 20
+      },
+      {
+        "name": "Warlord",
+        "parent": "Warrior",
+        "level": 40
+      },
+      {
+        "name": "Gladiator",
+        "parent": "Warrior",
+        "level": 40
+      },
+      {
+        "name": "Paladin",
+        "parent": "Knight",
+        "level": 40
+      },
+      {
+        "name": "Dark Avenger",
+        "parent": "Knight",
+        "level": 40
+      },
+      {
+        "name": "Hawkeye",
+        "parent": "Rogue",
+        "level": 40
+      },
+      {
+        "name": "Treasure Hunter",
+        "parent": "Rogue",
+        "level": 40
+      },
+      {
+        "name": "Sorcerer",
+        "parent": "Wizard",
+        "level": 40
+      },
+      {
+        "name": "Necromancer",
+        "parent": "Wizard",
+        "level": 40
+      },
+      {
+        "name": "Warlock",
+        "parent": "Wizard",
+        "level": 40
+      },
+      {
+        "name": "Bishop",
+        "parent": "Cleric",
+        "level": 40
+      },
+      {
+        "name": "Prophet",
+        "parent": "Cleric",
+        "level": 40
+      }
+    ]
+  },
+
+  "Elf": {
+    "base": [
+      {
+        "name": "Elven Fighter",
+        "type": "Fighter"
+      },
+      {
+        "name": "Elven Mystic",
+        "type": "Mystic"
+      }
+    ],
+    "classes": [
+      {
+        "name": "Elven Knight",
+        "parent": "Elven Fighter",
+        "level": 20
+      },
+      {
+        "name": "Elven Scout",
+        "parent": "Elven Fighter",
+        "level": 20
+      },
+      {
+        "name": "Elven Wizard",
+        "parent": "Elven Mystic",
+        "level": 20
+      },
+      {
+        "name": "Elven Oracle",
+        "parent": "Elven Mystic",
+        "level": 20
+      },
+      {
+        "name": "Temple Knight",
+        "parent": "Elven Knight",
+        "level": 40
+      },
+      {
+        "name": "Swordsinger",
+        "parent": "Elven Knight",
+        "level": 40
+      },
+      {
+        "name": "Silver Ranger",
+        "parent": "Elven Scout",
+        "level": 40
+      },
+      {
+        "name": "Plains Walker",
+        "parent": "Elven Scout",
+        "level": 40
+      },
+      {
+        "name": "Spellsinger",
+        "parent": "Elven Wizard",
+        "level": 40
+      },
+      {
+        "name": "Elemental Summoner",
+        "parent": "Elven Wizard",
+        "level": 40
+      },
+      {
+        "name": "Elven Elder",
+        "parent": "Elven Oracle",
+        "level": 40
+      }
+    ]
+  },
+
+  "Dark Elf": {
+    "base": [
+      {
+        "name": "Dark Fighter",
+        "type": "Fighter"
+      },
+      {
+        "name": "Dark Mystic",
+        "type": "Mystic"
+      }
+    ],
+    "classes": [
+      {
+        "name": "Assassin",
+        "parent": "Dark Fighter",
+        "level": 20
+      },
+      {
+        "name": "Paulus",
+        "parent": "Dark Fighter",
+        "level": 20
+      },
+      {
+        "name": "Dark Wizard",
+        "parent": "Dark Mystic",
+        "level": 20
+      },
+      {
+        "name": "Shillien Oracle",
+        "parent": "Dark Mystic",
+        "level": 20
+      },
+      {
+        "name": "Shillien Knight",
+        "parent": "Paulus",
+        "level": 40
+      },
+      {
+        "name": "Bladedancer",
+        "parent": "Paulus",
+        "level": 40
+      },
+      {
+        "name": "Phantom Ranger",
+        "parent": "Assassin",
+        "level": 40
+      },
+      {
+        "name": "Abyss Walker",
+        "parent": "Assassin",
+        "level": 40
+      },
+      {
+        "name": "Spellhowler",
+        "parent": "Dark Wizard",
+        "level": 40
+      },
+      {
+        "name": "Phantom Summoner",
+        "parent": "Dark Wizard",
+        "level": 40
+      },
+      {
+        "name": "Shillien Elder",
+        "parent": "Shillien Oracle",
+        "level": 40
+      }
+    ]
+  },
+
+  "Orc": {
+    "base": [
+      {
+        "name": "Orc Fighter",
+        "type": "Fighter"
+      },
+      {
+        "name": "Orc Mystic",
+        "type": "Mystic"
+      }
+    ],
+    "classes": [
+      {
+        "name": "Orc Raider",
+        "parent": "Orc Fighter",
+        "level": 20
+      },
+      {
+        "name": "Orc Monk",
+        "parent": "Orc Fighter",
+        "level": 20
+      },
+      {
+        "name": "Orc Shaman",
+        "parent": "Orc Mystic",
+        "level": 20
+      },
+      {
+        "name": "Destroyer",
+        "parent": "Orc Raider",
+        "level": 40
+      },
+      {
+        "name": "Tyrant",
+        "parent": "Orc Monk",
+        "level": 40
+      },
+      {
+        "name": "Overlord",
+        "parent": "Orc Shaman",
+        "level": 40
+      },
+      {
+        "name": "Warcryer",
+        "parent": "Orc Shaman",
+        "level": 40
+      }
+    ]
+  },
+
+  "Dwarf": {
+    "base": [
+      {
+        "name": "Dwarven Fighter",
+        "type": "Fighter"
+      }
+    ],
+    "classes": [
+      {
+        "name": "Scavenger",
+        "parent": "Dwarven Fighter",
+        "level": 20
+      },
+      {
+        "name": "Artisan",
+        "parent": "Dwarven Fighter",
+        "level": 20
+      },
+      {
+        "name": "Bounty Hunter",
+        "parent": "Scavenger",
+        "level": 40
+      },
+      {
+        "name": "Warsmith",
+        "parent": "Artisan",
+        "level": 40
+      }
+    ]
+  }
+}
