@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Classes — Fuji C1 Wiki</title>
+    <title>Classes | Fuji C1 Wiki</title>
 
     <style>
 
@@ -19,11 +18,19 @@
             min-height: 100vh;
 
             background:
-                radial-gradient(circle at top, #292015 0%, #11100e 45%, #080808 100%);
+                radial-gradient(
+                    circle at top,
+                    #292015 0%,
+                    #11100e 45%,
+                    #080808 100%
+                );
 
             color: #d8d1c2;
 
-            font-family: Georgia, "Times New Roman", serif;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
         }
 
         a {
@@ -31,42 +38,53 @@
             text-decoration: none;
         }
 
-        /* HEADER */
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             min-height: 90px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             padding: 18px 45px;
 
-            background: linear-gradient(
-                180deg,
-                #211c15,
-                #0d0d0c
-            );
+            background:
+                linear-gradient(
+                    180deg,
+                    #211c15,
+                    #0d0d0c
+                );
 
             border-bottom: 1px solid #8b6a28;
 
             box-shadow:
-                0 5px 25px rgba(0, 0, 0, 0.7);
+                0 5px 25px rgba(0,0,0,.7);
         }
 
         .logo {
-            color: #d8b44a;
+            color: #e0bd55;
 
             font-size: 30px;
+
             font-weight: bold;
 
             letter-spacing: 2px;
         }
 
         .subtitle {
-            color: #8e8779;
-            font-size: 13px;
             margin-top: 5px;
+
+            color: #8e8779;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
         }
 
         nav a {
@@ -74,29 +92,31 @@
 
             color: #aaa294;
 
-            font-size: 15px;
-
-            transition: 0.2s;
+            transition: .2s;
         }
 
         nav a:hover {
             color: #e0bd55;
         }
 
-        /* MAIN */
+
+        /* =========================
+           MAIN
+        ========================= */
 
         main {
-            max-width: 1250px;
+            width: 100%;
 
-            margin: auto;
+            padding: 45px 20px 80px;
 
-            padding: 50px 30px 80px;
+            overflow-x: auto;
         }
+
 
         .page-title {
             text-align: center;
 
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .page-title h1 {
@@ -106,7 +126,7 @@
 
             font-size: 45px;
 
-            letter-spacing: 4px;
+            letter-spacing: 5px;
 
             text-shadow:
                 0 3px 10px #000;
@@ -118,7 +138,10 @@
             letter-spacing: 2px;
         }
 
-        /* RACE TABS */
+
+        /* =========================
+           RACE TABS
+        ========================= */
 
         .race-tabs {
             display: flex;
@@ -129,16 +152,19 @@
 
             gap: 10px;
 
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .race-tab {
-            padding: 13px 24px;
+            padding: 12px 25px;
 
             cursor: pointer;
 
             background:
-                linear-gradient(#302719, #17140f);
+                linear-gradient(
+                    #302719,
+                    #17140f
+                );
 
             border: 1px solid #604b21;
 
@@ -150,7 +176,7 @@
 
             font-size: 15px;
 
-            transition: 0.2s;
+            transition: .2s;
         }
 
         .race-tab:hover,
@@ -162,165 +188,323 @@
             background: #302819;
 
             box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.4);
+                0 5px 15px rgba(0,0,0,.4);
         }
 
-        /* RACE TITLE */
 
-        .race-title {
+        /* =========================
+           TREE AREA
+        ========================= */
+
+        #tree-wrapper {
+            min-width: 1000px;
+
+            display: flex;
+
+            justify-content: center;
+
+            padding: 20px 0 60px;
+        }
+
+        .tree {
+            display: flex;
+
+            justify-content: center;
+
             text-align: center;
-
-            color: #d7b451;
-
-            font-size: 30px;
-
-            margin-bottom: 30px;
         }
 
-        /* BASE CLASSES */
 
-        .base-grid {
-            display: grid;
+        /* =========================
+           TREE UL
+        ========================= */
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
+        .tree ul {
+            position: relative;
 
-            gap: 20px;
+            display: flex;
 
-            margin-bottom: 45px;
+            justify-content: center;
+
+            padding-top: 45px;
+
+            margin: 0;
+
+            padding-left: 0;
         }
 
-        .base-card {
-            padding: 25px;
+
+        .tree > ul {
+            padding-top: 0;
+        }
+
+
+        .tree li {
+            position: relative;
+
+            list-style: none;
+
+            padding: 45px 12px 0;
+        }
+
+
+        .tree > ul > li {
+            padding-top: 0;
+        }
+
+
+        /* =========================
+           HORIZONTAL CONNECTORS
+        ========================= */
+
+        .tree li::before,
+        .tree li::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            width: 50%;
+
+            height: 45px;
+
+            border-top: 2px solid #806126;
+        }
+
+
+        .tree li::before {
+
+            right: 50%;
+
+            border-right: 2px solid #806126;
+        }
+
+
+        .tree li::after {
+
+            left: 50%;
+
+            border-left: 2px solid #806126;
+        }
+
+
+        .tree > ul > li::before,
+        .tree > ul > li::after {
+            display: none;
+        }
+
+
+        /* =========================
+           VERTICAL CONNECTOR
+        ========================= */
+
+        .tree li > ul::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 50%;
+
+            width: 2px;
+
+            height: 45px;
+
+            background: #806126;
+        }
+
+
+        /* =========================
+           FIRST / LAST CHILD
+        ========================= */
+
+        .tree li:first-child::before {
+            border: 0;
+        }
+
+        .tree li:last-child::after {
+            border: 0;
+        }
+
+
+        .tree li:only-child::before,
+        .tree li:only-child::after {
+            display: none;
+        }
+
+
+        .tree li:only-child {
+            padding-top: 45px;
+        }
+
+
+        /* =========================
+           CLASS NODE
+        ========================= */
+
+        .class-node {
+
+            position: relative;
+
+            display: inline-flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 170px;
+
+            min-height: 75px;
+
+            padding: 12px 18px;
 
             background:
                 linear-gradient(
                     145deg,
-                    #1c1914,
-                    #11110f
+                    #252018,
+                    #11100e
                 );
 
             border: 1px solid #604b21;
 
-            border-radius: 8px;
-
-            text-align: center;
-        }
-
-        .base-card .icon {
-            font-size: 35px;
-
-            margin-bottom: 10px;
-        }
-
-        .base-card h3 {
-            color: #d7b451;
-
-            margin: 5px 0 8px;
-        }
-
-        .base-card p {
-            color: #777166;
-
-            margin: 0;
-        }
-
-        /* CLASS TREE */
-
-        .tree {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(240px, 1fr));
-
-            gap: 18px;
-        }
-
-        .class-card {
-            padding: 20px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #191713,
-                    #0e0e0d
-                );
-
-            border: 1px solid #393124;
-
-            border-radius: 8px;
-
-            transition: 0.2s;
-        }
-
-        .class-card:hover {
-            transform: translateY(-3px);
-
-            border-color: #806126;
+            border-radius: 7px;
 
             box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.5);
+                0 5px 15px rgba(0,0,0,.5);
+
+            transition:
+                transform .2s,
+                border-color .2s,
+                box-shadow .2s;
         }
 
+
+        .class-node:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color: #d0a93f;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,.7);
+        }
+
+
+        .class-name {
+
+            color: #e0bd55;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            letter-spacing: .5px;
+        }
+
+
+        .class-type {
+
+            margin-top: 5px;
+
+            color: #777166;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
         .class-level {
-            display: inline-block;
 
-            padding: 4px 8px;
+            position: absolute;
 
-            margin-bottom: 10px;
+            top: -10px;
 
-            border: 1px solid #57451f;
+            right: -8px;
+
+            padding: 3px 7px;
+
+            background: #17140f;
+
+            border: 1px solid #806126;
 
             border-radius: 4px;
 
             color: #b49343;
 
-            font-size: 11px;
-
-            letter-spacing: 1px;
+            font-size: 10px;
         }
 
-        .class-card h3 {
-            margin: 5px 0;
 
-            color: #d7b451;
+        /* =========================
+           RACE ROOT
+        ========================= */
 
-            font-size: 20px;
+        .race-root {
+
+            min-width: 210px;
+
+            padding: 15px 30px;
+
+            margin-bottom: 0;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #332817,
+                    #18130d
+                );
+
+            border: 2px solid #a37d2c;
+
+            border-radius: 8px;
+
+            color: #f0c95b;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            box-shadow:
+                0 6px 20px rgba(0,0,0,.6);
         }
 
-        .parent {
-            color: #777166;
 
-            font-size: 13px;
-        }
+        /* =========================
+           LOADING / ERROR
+        ========================= */
 
-        .arrow {
-            color: #6d5729;
+        .message {
 
-            margin: 8px 0;
+            text-align: center;
+
+            padding: 60px;
+
+            color: #8e8779;
 
             font-size: 18px;
         }
 
-        /* FOOTER */
 
-        footer {
-            text-align: center;
+        /* =========================
+           MOBILE
+        ========================= */
 
-            padding: 30px;
-
-            border-top: 1px solid #29251e;
-
-            color: #5f5a51;
-
-            font-size: 13px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 700px) {
+        @media(max-width: 800px) {
 
             header {
+
                 flex-direction: column;
 
                 gap: 15px;
@@ -329,16 +513,19 @@
             }
 
             nav a {
-                margin: 0 7px;
+
+                margin: 0 8px;
             }
 
             .page-title h1 {
+
                 font-size: 35px;
             }
 
         }
 
     </style>
+
 </head>
 
 
@@ -366,7 +553,9 @@
 
     <nav>
 
-        <a href="index.html">Home</a>
+        <a href="index.html">
+            Home
+        </a>
 
         <a href="classes.html">
             Classes
@@ -387,7 +576,7 @@
 
     <div class="page-title">
 
-        <h1>CLASSES</h1>
+        <h1>CLASS TREE</h1>
 
         <p>
             Chronicle 1 · Class Progression
@@ -396,31 +585,24 @@
     </div>
 
 
-
-    <div id="race-tabs" class="race-tabs"></div>
-
-
-
-    <h2 id="race-title" class="race-title"></h2>
-
-
-
     <div
-        id="base-classes"
-        class="base-grid">
+        id="race-tabs"
+        class="race-tabs">
     </div>
 
 
+    <div id="tree-wrapper">
 
-    <h2 class="race-title">
-        Class Progression
-    </h2>
+        <div
+            id="tree"
+            class="tree">
 
+            <div class="message">
+                Loading classes...
+            </div>
 
+        </div>
 
-    <div
-        id="class-tree"
-        class="tree">
     </div>
 
 
@@ -428,203 +610,430 @@
 
 
 
-<footer>
-
-    Fuji C1 Wiki · Chronicle 1 · x1
-
-</footer>
-
-
-
 <script>
 
-    let classData = {};
 
-    let currentRace = "Human";
+let classData = {};
 
-
-    fetch("data/classes.json")
-
-        .then(response => {
-
-            if (!response.ok) {
-                throw new Error("Could not load classes.json");
-            }
-
-            return response.json();
-
-        })
-
-        .then(data => {
-
-            classData = data;
-
-            createRaceTabs();
-
-            showRace("Human");
-
-        })
-
-        .catch(error => {
-
-            console.error(error);
-
-            document.getElementById("race-title").textContent =
-                "Unable to load class database.";
-
-        });
+let currentRace = "Human";
 
 
+/* =========================
+   LOAD JSON
+========================= */
 
-    function createRaceTabs() {
+fetch("data/classes.json")
 
-        const container =
-            document.getElementById("race-tabs");
+.then(response => {
+
+    if (!response.ok) {
+
+        throw new Error(
+            "Could not load classes.json"
+        );
+
+    }
+
+    return response.json();
+
+})
 
 
-        Object.keys(classData).forEach(race => {
+.then(data => {
+
+    classData = data;
+
+    createRaceTabs();
+
+    renderRace("Human");
+
+})
+
+
+.catch(error => {
+
+    console.error(error);
+
+    document.getElementById("tree").innerHTML = `
+
+        <div class="message">
+
+            Could not load class database.
+
+        </div>
+
+    `;
+
+});
+
+
+/* =========================
+   RACE BUTTONS
+========================= */
+
+function createRaceTabs() {
+
+    const container =
+        document.getElementById(
+            "race-tabs"
+        );
+
+
+    container.innerHTML = "";
+
+
+    Object.keys(classData)
+        .forEach(race => {
+
 
             const button =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
 
 
-            button.className = "race-tab";
+            button.className =
+                "race-tab";
 
-            button.textContent = race;
+
+            button.textContent =
+                race;
 
 
             button.onclick = () => {
 
-                showRace(race);
+                renderRace(race);
 
             };
 
 
-            container.appendChild(button);
+            container.appendChild(
+                button
+            );
 
         });
+
+}
+
+
+/* =========================
+   FIND CHILDREN
+========================= */
+
+function getChildren(
+    race,
+    parentName
+) {
+
+    return classData[race]
+        .classes
+        .filter(
+            cls =>
+                cls.parent === parentName
+        );
+
+}
+
+
+/* =========================
+   CREATE CLASS NODE
+========================= */
+
+function createNode(
+    race,
+    cls
+) {
+
+    const li =
+        document.createElement("li");
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.className =
+        "class-node";
+
+
+    link.href =
+        "#";
+
+
+    const level =
+        document.createElement("span");
+
+
+    level.className =
+        "class-level";
+
+
+    level.textContent =
+        "LV " + cls.level;
+
+
+    const name =
+        document.createElement("div");
+
+
+    name.className =
+        "class-name";
+
+
+    name.textContent =
+        cls.name;
+
+
+    const type =
+        document.createElement("div");
+
+
+    type.className =
+        "class-type";
+
+
+    type.textContent =
+        cls.level === 20
+            ? "1st Class"
+            : "2nd Class";
+
+
+    link.appendChild(level);
+
+    link.appendChild(name);
+
+    link.appendChild(type);
+
+
+    li.appendChild(link);
+
+
+    const children =
+        getChildren(
+            race,
+            cls.name
+        );
+
+
+    if (children.length > 0) {
+
+        const ul =
+            document.createElement("ul");
+
+
+        children.forEach(child => {
+
+            ul.appendChild(
+                createNode(
+                    race,
+                    child
+                )
+            );
+
+        });
+
+
+        li.appendChild(ul);
 
     }
 
 
+    return li;
 
-    function showRace(race) {
-
-        currentRace = race;
+}
 
 
-        document
-            .querySelectorAll(".race-tab")
-            .forEach(button => {
+/* =========================
+   RENDER RACE
+========================= */
 
-                button.classList.toggle(
-                    "active",
-                    button.textContent === race
+function renderRace(race) {
+
+    currentRace = race;
+
+
+    document
+        .querySelectorAll(".race-tab")
+        .forEach(button => {
+
+            button.classList.toggle(
+                "active",
+                button.textContent === race
+            );
+
+        });
+
+
+    const tree =
+        document.getElementById(
+            "tree"
+        );
+
+
+    tree.innerHTML = "";
+
+
+    const rootList =
+        document.createElement("ul");
+
+
+    /*
+       RACE ROOT
+    */
+
+    const raceLi =
+        document.createElement("li");
+
+
+    raceLi.style.paddingTop = "0";
+
+
+    const raceNode =
+        document.createElement("div");
+
+
+    raceNode.className =
+        "race-root";
+
+
+    raceNode.textContent =
+        race.toUpperCase();
+
+
+    raceLi.appendChild(
+        raceNode
+    );
+
+
+    /*
+       BASE CLASSES
+    */
+
+    const baseUl =
+        document.createElement("ul");
+
+
+    classData[race]
+        .base
+        .forEach(base => {
+
+
+            const baseLi =
+                document.createElement(
+                    "li"
                 );
 
-            });
+
+            const baseNode =
+                document.createElement(
+                    "div"
+                );
 
 
-        const data =
-            classData[race];
+            baseNode.className =
+                "class-node";
 
 
-        document.getElementById("race-title")
-            .textContent = race;
+            const name =
+                document.createElement(
+                    "div"
+                );
 
 
-
-        /* BASE CLASSES */
-
-        const baseContainer =
-            document.getElementById("base-classes");
+            name.className =
+                "class-name";
 
 
-        baseContainer.innerHTML = "";
+            name.textContent =
+                base.name;
 
 
-        data.base.forEach(base => {
-
-            const card =
-                document.createElement("div");
-
-
-            card.className = "base-card";
+            const type =
+                document.createElement(
+                    "div"
+                );
 
 
-            const icon =
-                base.type === "Mystic"
-                    ? "🔮"
-                    : "⚔️";
+            type.className =
+                "class-type";
 
 
-            card.innerHTML = `
-
-                <div class="icon">
-                    ${icon}
-                </div>
-
-                <h3>
-                    ${base.name}
-                </h3>
-
-                <p>
-                    ${base.type}
-                </p>
-
-            `;
+            type.textContent =
+                base.type;
 
 
-            baseContainer.appendChild(card);
+            baseNode.appendChild(name);
 
-        });
-
-
-
-        /* CLASS TREE */
-
-        const tree =
-            document.getElementById("class-tree");
+            baseNode.appendChild(type);
 
 
-        tree.innerHTML = "";
+            baseLi.appendChild(
+                baseNode
+            );
 
 
-        data.classes.forEach(cls => {
+            /*
+               FIND CLASSES THAT
+               START FROM THIS BASE
+            */
 
-            const card =
-                document.createElement("div");
-
-
-            card.className = "class-card";
-
-
-            card.innerHTML = `
-
-                <span class="class-level">
-                    LEVEL ${cls.level}
-                </span>
-
-                <h3>
-                    ${cls.name}
-                </h3>
-
-                <div class="arrow">
-                    ↓
-                </div>
-
-                <div class="parent">
-                    From: ${cls.parent}
-                </div>
-
-            `;
+            const children =
+                getChildren(
+                    race,
+                    base.name
+                );
 
 
-            tree.appendChild(card);
+            if (children.length > 0) {
+
+                const childUl =
+                    document.createElement(
+                        "ul"
+                    );
+
+
+                children.forEach(child => {
+
+                    childUl.appendChild(
+                        createNode(
+                            race,
+                            child
+                        )
+                    );
+
+                });
+
+
+                baseLi.appendChild(
+                    childUl
+                );
+
+            }
+
+
+            baseUl.appendChild(
+                baseLi
+            );
 
         });
 
-    }
+
+    raceLi.appendChild(
+        baseUl
+    );
+
+
+    rootList.appendChild(
+        raceLi
+    );
+
+
+    tree.appendChild(
+        rootList
+    );
+
+}
+
 
 </script>
 
@@ -632,4 +1041,3 @@
 </body>
 
 </html>
-```
