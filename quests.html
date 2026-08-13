@@ -4,187 +4,431 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Fuji C1 Wiki - Quests</title>
 
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Quests | Fuji C1 Wiki</title>
 
 <style>
 
-body {
-    margin:0;
-    background:#111;
-    color:#ddd;
-    font-family:Georgia, serif;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #292015 0%,
+            #11100e 45%,
+            #080808 100%
+        );
+
+    color: #d8d1c2;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* HEADER */
 
 header {
+    min-height: 90px;
 
-height:90px;
-background:linear-gradient(#1f1b15,#090909);
-border-bottom:2px solid #9b7b32;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-display:flex;
-align-items:center;
-padding-left:40px;
+    padding: 18px 45px;
 
+    background:
+        linear-gradient(
+            180deg,
+            #211c15,
+            #0d0d0c
+        );
+
+    border-bottom: 1px solid #8b6a28;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.7);
 }
-
 
 .logo {
+    color: #e0bd55;
 
-font-size:34px;
-color:#d4af37;
+    font-size: 30px;
+    font-weight: bold;
 
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    margin-top: 5px;
+
+    color: #8e8779;
+
+    font-size: 13px;
+}
+
+nav a {
+    margin-left: 25px;
+
+    color: #aaa294;
+
+    transition: .2s;
+}
+
+nav a:hover {
+    color: #e0bd55;
 }
 
 
+/* MAIN */
 
-.menu {
+main {
+    max-width: 1200px;
 
-background:#151515;
-padding:15px;
-text-align:center;
+    margin: auto;
 
+    padding: 55px 25px 100px;
 }
 
 
-.menu a {
+/* TITLE */
 
-color:#bbb;
-text-decoration:none;
-margin:20px;
+.page-title {
+    text-align: center;
 
+    margin-bottom: 40px;
+}
+
+.page-title h1 {
+    margin: 0;
+
+    color: #e0bd55;
+
+    font-size: 45px;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 3px 10px #000;
+}
+
+.page-title p {
+    color: #8e8779;
+
+    letter-spacing: 2px;
 }
 
 
-.menu a:hover {
+/* SEARCH */
 
-color:#d4af37;
+.search-box {
+    margin-bottom: 25px;
+}
 
+.search-box input {
+    width: 100%;
+
+    padding: 16px 18px;
+
+    background: #11100e;
+
+    border: 1px solid #604b21;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    color: #d8d1c2;
+
+    font-family: inherit;
+
+    font-size: 16px;
+}
+
+.search-box input:focus {
+    border-color: #b18b32;
 }
 
 
-
-.container {
-
-padding:40px;
-
-}
-
-
-
-h1,h2 {
-
-color:#d4af37;
-
-}
-
-
-
-.search {
-
-width:100%;
-padding:15px;
-
-background:#222;
-border:1px solid #555;
-
-color:white;
-
-font-size:16px;
-
-}
-
-
+/* FILTERS */
 
 .filters {
+    display: grid;
 
-margin-top:25px;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );
 
-background:#181818;
+    gap: 15px;
 
-border:1px solid #66501d;
+    margin-bottom: 35px;
+}
 
-padding:20px;
+.filters select {
 
-border-radius:10px;
+    width: 100%;
 
+    padding: 13px;
+
+    background: #17140f;
+
+    border: 1px solid #604b21;
+
+    border-radius: 5px;
+
+    color: #c8bfaf;
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+.filters select:focus {
+    border-color: #b18b32;
 }
 
 
+/* QUEST TYPES */
 
-select {
+.quest-types {
 
-background:#222;
-color:white;
+    display: flex;
 
-padding:10px;
+    flex-wrap: wrap;
 
-margin:10px;
+    gap: 8px;
 
+    margin-bottom: 35px;
+}
+
+.quest-type {
+
+    padding: 9px 16px;
+
+    cursor: pointer;
+
+    background: #17140f;
+
+    border: 1px solid #604b21;
+
+    border-radius: 5px;
+
+    color: #aaa294;
+
+    font-family: inherit;
+
+    transition: .2s;
+}
+
+.quest-type:hover,
+.quest-type.active {
+
+    color: #e0bd55;
+
+    border-color: #b18b32;
+
+    background: #302819;
 }
 
 
+/* RESULTS INFO */
 
+.results-info {
 
-.quest {
+    margin-bottom: 15px;
 
-background:#181818;
+    color: #777166;
 
-border:1px solid #444;
-
-border-left:5px solid #d4af37;
-
-padding:20px;
-
-margin-top:20px;
-
-border-radius:8px;
-
+    font-size: 13px;
 }
 
 
+/* QUEST LIST */
 
-.quest h2 {
+.quest-list {
 
-margin-top:0;
+    display: flex;
 
+    flex-direction: column;
+
+    gap: 12px;
 }
 
 
+/* QUEST CARD */
 
-.tag {
+.quest-card {
 
-display:inline-block;
+    display: grid;
 
-background:#333;
+    grid-template-columns:
+        80px
+        1fr
+        180px
+        180px;
 
-padding:5px 10px;
+    align-items: center;
 
-margin:5px;
+    gap: 20px;
 
-border-radius:5px;
+    padding: 18px 20px;
 
-color:#d4af37;
+    background:
+        linear-gradient(
+            145deg,
+            #1c1914,
+            #10100e
+        );
 
+    border: 1px solid #393124;
+
+    border-radius: 7px;
+
+    transition: .2s;
+}
+
+.quest-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color: #806126;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.5);
 }
 
 
+/* LEVEL */
 
-footer {
+.quest-level {
 
-text-align:center;
-padding:20px;
-color:#777;
+    text-align: center;
 
+    color: #d7b451;
+
+    font-size: 20px;
+
+    font-weight: bold;
 }
 
+.quest-level span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #777166;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* QUEST NAME */
+
+.quest-name {
+
+    color: #d7b451;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    margin-bottom: 6px;
+}
+
+.quest-description {
+
+    color: #777166;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* LOCATION / NPC */
+
+.quest-meta {
+
+    color: #aaa294;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.quest-meta strong {
+
+    color: #806126;
+}
+
+
+/* EMPTY */
+
+.empty {
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    color: #777166;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    nav a {
+
+        margin: 0 8px;
+    }
+
+    .quest-card {
+
+        grid-template-columns: 60px 1fr;
+    }
+
+    .quest-meta {
+
+        grid-column: 2;
+    }
+
+}
 
 </style>
 
-
 </head>
-
 
 
 <body>
@@ -192,127 +436,799 @@ color:#777;
 
 <header>
 
-<div class="logo">
+    <div>
 
-📜 Fuji C1 Wiki - Quest Database
+        <a href="index.html">
 
-</div>
+            <div class="logo">
+                ⚔ FUJI C1 WIKI
+            </div>
 
+            <div class="subtitle">
+                Lineage II · Chronicle 1 · x1
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="classes.html">
+            Classes
+        </a>
+
+        <a href="quests.html">
+            Quests
+        </a>
+
+    </nav>
 
 </header>
 
 
 
-<div class="menu">
+<main>
 
-<a href="index.html">Home</a>
 
-<a href="classes.html">Classes</a>
+<div class="page-title">
 
-<a href="quests.html">Quests</a>
+    <h1>QUESTS</h1>
+
+    <p>
+        Chronicle 1 · Quest Database
+    </p>
 
 </div>
 
 
 
+<!-- SEARCH -->
 
-<div class="container">
+<div class="search-box">
 
+    <input
+        type="text"
+        id="search"
+        placeholder="Search quests..."
+    >
 
-<h1>📜 Lineage II Chronicle 1 Quests</h1>
-
-
-<p>
-
-Complete quest database for C1 x1 servers.
-
-</p>
-
+</div>
 
 
 
-<input class="search" placeholder="Search Quest...">
-
-
-
-
+<!-- FILTERS -->
 
 <div class="filters">
 
 
-<h2>Filters</h2>
+    <select id="raceFilter">
 
+        <option value="">
+            All Races
+        </option>
 
-<select>
-
-<option>All Races</option>
-
-<option>Human</option>
-
-<option>Elf</option>
-
-<option>Dark Elf</option>
-
-<option>Orc</option>
-
-<option>Dwarf</option>
-
-</select>
+    </select>
 
 
 
+    <select id="classFilter">
 
-<select>
+        <option value="">
+            All Classes
+        </option>
 
-<option>All Classes</option>
-
-<option>Fighter</option>
-
-<option>Mystic</option>
-
-<option>Warrior</option>
-
-<option>Knight</option>
-
-</select>
+    </select>
 
 
 
+    <select id="levelFilter">
 
-<select>
+        <option value="">
+            All Levels
+        </option>
 
-<option>All Levels</option>
+        <option value="1-19">
+            Level 1–19
+        </option>
 
-<option>1-10</option>
+        <option value="20-39">
+            Level 20–39
+        </option>
 
-<option>10-20</option>
+        <option value="40-59">
+            Level 40–59
+        </option>
 
-<option>20-40</option>
+        <option value="60+">
+            Level 60+
+        </option>
 
-<option>40+</option>
-
-</select>
+    </select>
 
 
 
-</div>
+    <select id="locationFilter">
 
-<h1>All C1 Quests</h1>
+        <option value="">
+            All Locations
+        </option>
 
-<div id="quest-list">
+    </select>
+
 
 </div>
 
 
 
-<footer>
+<!-- QUEST TYPES -->
 
-Fuji C1 Wiki © Chronicle 1 x1
-
-</footer>
+<div class="quest-types">
 
 
-<script src="js/quests.js"></script>
+    <button
+        class="quest-type active"
+        data-type="">
+
+        All
+
+    </button>
+
+
+    <button
+        class="quest-type"
+        data-type="Ordinary">
+
+        Ordinary
+
+    </button>
+
+
+    <button
+        class="quest-type"
+        data-type="For a profession">
+
+        Profession
+
+    </button>
+
+
+    <button
+        class="quest-type"
+        data-type="For a clan">
+
+        Clan
+
+    </button>
+
+
+</div>
+
+
+
+<div
+    id="resultsInfo"
+    class="results-info">
+
+    Loading quests...
+
+</div>
+
+
+
+<div
+    id="questList"
+    class="quest-list">
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+let quests = [];
+
+let activeType = "";
+
+
+/* =========================
+   LOAD QUEST DATABASE
+========================= */
+
+fetch("data/quests.json")
+
+.then(response => {
+
+    if (!response.ok) {
+
+        throw new Error(
+            "Could not load quests.json"
+        );
+
+    }
+
+    return response.json();
+
+})
+
+
+.then(data => {
+
+    quests = data;
+
+    createFilters();
+
+    renderQuests();
+
+})
+
+
+.catch(error => {
+
+    console.error(error);
+
+    document.getElementById(
+        "questList"
+    ).innerHTML = `
+
+        <div class="empty">
+
+            Could not load quest database.
+
+        </div>
+
+    `;
+
+});
+
+
+/* =========================
+   CREATE FILTERS
+========================= */
+
+function createFilters() {
+
+
+    const races = new Set();
+
+    const classes = new Set();
+
+    const locations = new Set();
+
+
+    quests.forEach(quest => {
+
+
+        if (quest.race) {
+
+            quest.race.forEach(
+                race =>
+                    races.add(race)
+            );
+
+        }
+
+
+        if (quest.classes) {
+
+            quest.classes.forEach(
+                cls =>
+                    classes.add(cls)
+            );
+
+        }
+
+
+        if (quest.location) {
+
+            locations.add(
+                quest.location
+            );
+
+        }
+
+    });
+
+
+    fillSelect(
+        "raceFilter",
+        races
+    );
+
+
+    fillSelect(
+        "classFilter",
+        classes
+    );
+
+
+    fillSelect(
+        "locationFilter",
+        locations
+    );
+
+}
+
+
+/* =========================
+   SELECT OPTIONS
+========================= */
+
+function fillSelect(
+    id,
+    values
+) {
+
+    const select =
+        document.getElementById(id);
+
+
+    [...values]
+        .sort()
+        .forEach(value => {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+            option.value = value;
+
+            option.textContent = value;
+
+            select.appendChild(
+                option
+            );
+
+        });
+
+}
+
+
+/* =========================
+   RENDER QUESTS
+========================= */
+
+function renderQuests() {
+
+
+    const search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const race =
+        document
+        .getElementById("raceFilter")
+        .value;
+
+
+    const cls =
+        document
+        .getElementById("classFilter")
+        .value;
+
+
+    const level =
+        document
+        .getElementById("levelFilter")
+        .value;
+
+
+    const location =
+        document
+        .getElementById("locationFilter")
+        .value;
+
+
+    let filtered =
+        quests.filter(
+            quest => {
+
+
+                /* SEARCH */
+
+                const text = `
+
+                    ${quest.name}
+
+                    ${quest.description}
+
+                    ${quest.location}
+
+                    ${quest.npc}
+
+                `.toLowerCase();
+
+
+                if (
+                    search &&
+                    !text.includes(search)
+                ) {
+
+                    return false;
+
+                }
+
+
+                /* RACE */
+
+                if (
+                    race &&
+                    (!quest.race ||
+                     !quest.race.includes(race))
+                ) {
+
+                    return false;
+
+                }
+
+
+                /* CLASS */
+
+                if (
+                    cls &&
+                    (!quest.classes ||
+                     !quest.classes.includes(cls))
+                ) {
+
+                    return false;
+
+                }
+
+
+                /* LEVEL */
+
+                if (
+                    level &&
+                    !levelMatches(
+                        quest.level,
+                        level
+                    )
+                ) {
+
+                    return false;
+
+                }
+
+
+                /* LOCATION */
+
+                if (
+                    location &&
+                    quest.location !== location
+                ) {
+
+                    return false;
+
+                }
+
+
+                /* TYPE */
+
+                if (
+                    activeType &&
+                    quest.type !== activeType
+                ) {
+
+                    return false;
+
+                }
+
+
+                return true;
+
+            }
+        );
+
+
+    /*
+       SORT BY LEVEL
+    */
+
+    filtered.sort(
+        (a,b) =>
+            a.level - b.level
+    );
+
+
+    displayQuests(filtered);
+
+}
+
+
+/* =========================
+   LEVEL FILTER
+========================= */
+
+function levelMatches(
+    level,
+    range
+) {
+
+
+    if (range === "1-19") {
+
+        return level >= 1 &&
+               level <= 19;
+
+    }
+
+
+    if (range === "20-39") {
+
+        return level >= 20 &&
+               level <= 39;
+
+    }
+
+
+    if (range === "40-59") {
+
+        return level >= 40 &&
+               level <= 59;
+
+    }
+
+
+    if (range === "60+") {
+
+        return level >= 60;
+
+    }
+
+
+    return true;
+
+}
+
+
+/* =========================
+   DISPLAY QUESTS
+========================= */
+
+function displayQuests(
+    list
+) {
+
+
+    const container =
+        document.getElementById(
+            "questList"
+        );
+
+
+    const info =
+        document.getElementById(
+            "resultsInfo"
+        );
+
+
+    info.textContent =
+        list.length +
+        " quest" +
+        (list.length === 1
+            ? ""
+            : "s"
+        ) +
+        " found";
+
+
+    container.innerHTML = "";
+
+
+    if (list.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="empty">
+
+                No quests found.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    list.forEach(
+        quest => {
+
+
+            const card =
+                document.createElement(
+                    "a"
+                );
+
+
+            card.className =
+                "quest-card";
+
+
+            card.href =
+                "quest.html?id=" +
+                encodeURIComponent(
+                    quest.id
+                );
+
+
+            card.innerHTML = `
+
+
+                <div class="quest-level">
+
+                    ${quest.level}
+
+                    <span>
+                        LEVEL
+                    </span>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="quest-name">
+
+                        ${quest.name}
+
+                    </div>
+
+
+                    <div class="quest-description">
+
+                        ${quest.description || ""}
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="quest-meta">
+
+                    <strong>
+                        Location
+                    </strong>
+
+                    <br>
+
+                    ${quest.location || "-"}
+
+                </div>
+
+
+
+                <div class="quest-meta">
+
+                    <strong>
+                        NPC
+                    </strong>
+
+                    <br>
+
+                    ${quest.npc || "-"}
+
+                </div>
+
+
+            `;
+
+
+            container.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================
+   EVENTS
+========================= */
+
+document
+.getElementById("search")
+.addEventListener(
+    "input",
+    renderQuests
+);
+
+
+document
+.getElementById("raceFilter")
+.addEventListener(
+    "change",
+    renderQuests
+);
+
+
+document
+.getElementById("classFilter")
+.addEventListener(
+    "change",
+    renderQuests
+);
+
+
+document
+.getElementById("levelFilter")
+.addEventListener(
+    "change",
+    renderQuests
+);
+
+
+document
+.getElementById("locationFilter")
+.addEventListener(
+    "change",
+    renderQuests
+);
+
+
+/* =========================
+   QUEST TYPE BUTTONS
+========================= */
+
+document
+.querySelectorAll(".quest-type")
+.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+
+            document
+            .querySelectorAll(
+                ".quest-type"
+            )
+            .forEach(
+                b =>
+                    b.classList.remove(
+                        "active"
+                    )
+            );
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            activeType =
+                button.dataset.type;
+
+
+            renderQuests();
+
+        }
+    );
+
+});
+
+</script>
+
+
 </body>
 
 </html>
