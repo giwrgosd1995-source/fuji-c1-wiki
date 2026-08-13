@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Class | Fuji C1 Wiki</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #292015 0%,
+            #11100e 45%,
+            #080808 100%
+        );
+
+    color: #d8d1c2;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+/* HEADER */
+
+header {
+
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 45px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #211c15,
+            #0d0d0c
+        );
+
+    border-bottom:
+        1px solid #8b6a28;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.7);
+}
+
+
+.logo {
+
+    color: #e0bd55;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.subtitle {
+
+    margin-top: 5px;
+
+    color: #8e8779;
+
+    font-size: 13px;
+}
+
+
+nav a {
+
+    margin-left: 25px;
+
+    color: #aaa294;
+
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+
+nav a:hover {
+
+    color: #e0bd55;
+}
+
+
+/* MAIN */
+
+main {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 60px 25px 100px;
+}
+
+
+/* CLASS HEADER */
+
+.class-header {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.class-header h1 {
+
+    margin: 0;
+
+    color: #e0bd55;
+
+    font-size: 48px;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 3px 10px #000;
+}
+
+
+.class-path {
+
+    margin-top: 15px;
+
+    color: #8e8779;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+}
+
+
+/* CLASS CARD */
+
+.class-card {
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #211d16,
+            #0f0f0d
+        );
+
+    border:
+        1px solid #604b21;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.6);
+
+    margin-bottom: 35px;
+}
+
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );
+
+    gap: 20px;
+}
+
+
+.info-box {
+
+    padding: 18px;
+
+    background: #15130f;
+
+    border:
+        1px solid #393124;
+
+    border-radius: 6px;
+}
+
+
+.info-title {
+
+    color: #806126;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.info-value {
+
+    color: #d7b451;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* SECTIONS */
+
+.section {
+
+    margin-top: 35px;
+}
+
+
+.section h2 {
+
+    margin-bottom: 15px;
+
+    color: #d7b451;
+
+    font-size: 27px;
+
+    border-bottom:
+        1px solid #393124;
+
+    padding-bottom: 10px;
+}
+
+
+.placeholder {
+
+    padding: 25px;
+
+    background: #11100e;
+
+    border:
+        1px solid #29251e;
+
+    border-radius: 6px;
+
+    color: #777166;
+
+    line-height: 1.7;
+}
+
+
+/* BACK */
+
+.back {
+
+    display: inline-block;
+
+    margin-bottom: 30px;
+
+    color: #b49343;
+
+    text-decoration: none;
+}
+
+
+.back:hover {
+
+    color: #e0bd55;
+}
+
+
+/* ERROR */
+
+.error {
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    color: #b49343;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    nav a {
+
+        margin: 0 8px;
+    }
+
+    .class-header h1 {
+
+        font-size: 36px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div>
+
+        <a href="index.html"
+           style="text-decoration:none">
+
+            <div class="logo">
+                ⚔ FUJI C1 WIKI
+            </div>
+
+            <div class="subtitle">
+                Lineage II · Chronicle 1 · x1
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="classes.html">
+            Classes
+        </a>
+
+        <a href="quests.html">
+            Quests
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+
+<a
+    href="classes.html"
+    class="back">
+
+    ← Back to Class Tree
+
+</a>
+
+
+
+<div
+    id="content">
+
+    <div class="error">
+
+        Loading class...
+
+    </div>
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+let classData = {};
+
+
+/* =========================
+   GET CLASS NAME FROM URL
+========================= */
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const className =
+    params.get("name");
+
+
+/* =========================
+   LOAD DATABASE
+========================= */
+
+fetch("data/classes.json")
+
+.then(response => {
+
+    if (!response.ok) {
+
+        throw new Error(
+            "Could not load classes.json"
+        );
+
+    }
+
+    return response.json();
+
+})
+
+
+.then(data => {
+
+    classData = data;
+
+    findClass();
+
+})
+
+
+.catch(error => {
+
+    console.error(error);
+
+    document.getElementById(
+        "content"
+    ).innerHTML = `
+
+        <div class="error">
+
+            Could not load class database.
+
+        </div>
+
+    `;
+
+});
+
+
+/* =========================
+   FIND CLASS
+========================= */
+
+function findClass() {
+
+    let found = null;
+
+
+    for (
+        const race in classData
+    ) {
+
+        const raceData =
+            classData[race];
+
+
+        /*
+         BASE CLASSES
+        */
+
+        for (
+            const base of raceData.base
+        ) {
+
+            if (
+                base.name.toLowerCase()
+                === className.toLowerCase()
+            ) {
+
+                found = {
+
+                    ...base,
+
+                    race: race,
+
+                    parent: null,
+
+                    level: 1
+
+                };
+
+            }
+
+        }
+
+
+        /*
+         NORMAL CLASSES
+        */
+
+        for (
+            const cls
+            of raceData.classes
+        ) {
+
+            if (
+                cls.name.toLowerCase()
+                === className.toLowerCase()
+            ) {
+
+                found = {
+
+                    ...cls,
+
+                    race: race
+
+                };
+
+            }
+
+        }
+
+    }
+
+
+    if (!found) {
+
+        document.getElementById(
+            "content"
+        ).innerHTML = `
+
+            <div class="error">
+
+                Class not found.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    renderClass(found);
+
+}
+
+
+/* =========================
+   RENDER
+========================= */
+
+function renderClass(cls) {
+
+
+    document.title =
+        cls.name +
+        " | Fuji C1 Wiki";
+
+
+    let classType;
+
+
+    if (cls.level === 1) {
+
+        classType =
+            cls.type;
+
+    }
+
+    else if (cls.level === 20) {
+
+        classType =
+            "1st Profession";
+
+    }
+
+    else {
+
+        classType =
+            "2nd Profession";
+
+    }
+
+
+    let parentText =
+        cls.parent
+            ? cls.parent
+            : "Starting Class";
+
+
+    document.getElementById(
+        "content"
+    ).innerHTML = `
+
+
+        <div class="class-header">
+
+            <h1>
+                ${cls.name.toUpperCase()}
+            </h1>
+
+            <div class="class-path">
+
+                ${cls.race}
+
+                →
+
+                ${parentText}
+
+                →
+
+                ${cls.name}
+
+            </div>
+
+        </div>
+
+
+
+        <div class="class-card">
+
+
+            <div class="info-grid">
+
+
+                <div class="info-box">
+
+                    <div class="info-title">
+                        Race
+                    </div>
+
+                    <div class="info-value">
+                        ${cls.race}
+                    </div>
+
+                </div>
+
+
+
+                <div class="info-box">
+
+                    <div class="info-title">
+                        Profession
+                    </div>
+
+                    <div class="info-value">
+                        ${classType}
+                    </div>
+
+                </div>
+
+
+
+                <div class="info-box">
+
+                    <div class="info-title">
+                        Required Level
+                    </div>
+
+                    <div class="info-value">
+
+                        ${
+                            cls.level === 1
+                            ? "1"
+                            : cls.level
+                        }
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="info-box">
+
+                    <div class="info-title">
+                        Parent Class
+                    </div>
+
+                    <div class="info-value">
+
+                        ${parentText}
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>
+                Class Change
+            </h2>
+
+
+            <div class="placeholder">
+
+                Class change information
+                will be added here.
+
+                <br><br>
+
+                We will connect this section
+                to the C1 class-change quests.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>
+                Quests
+            </h2>
+
+
+            <div class="placeholder">
+
+                Class-specific quests will
+                appear here.
+
+                <br><br>
+
+                This section will eventually
+                use the Fuji C1 Quest Database.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>
+                Skills
+            </h2>
+
+
+            <div class="placeholder">
+
+                C1 skills for this class
+                will be displayed here.
+
+                <br><br>
+
+                Skills will be organized
+                by level.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>
+                Equipment
+            </h2>
+
+
+            <div class="placeholder">
+
+                Recommended C1 equipment
+                will be displayed here.
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
