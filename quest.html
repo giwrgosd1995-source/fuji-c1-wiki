@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quest | Fuji C1 Wiki</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top, #292015 0%, #11100e 45%, #080808 100%);
+
+    color: #d8d1c2;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* HEADER */
+
+header {
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 45px;
+
+    background:
+        linear-gradient(180deg, #211c15, #0d0d0c);
+
+    border-bottom: 1px solid #8b6a28;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,.7);
+}
+
+.logo {
+    color: #e0bd55;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    margin-top: 5px;
+    color: #8e8779;
+    font-size: 13px;
+}
+
+nav a {
+    margin-left: 25px;
+    color: #aaa294;
+}
+
+nav a:hover {
+    color: #e0bd55;
+}
+
+
+/* MAIN */
+
+main {
+    max-width: 1050px;
+    margin: auto;
+
+    padding: 55px 25px 100px;
+}
+
+
+/* BACK */
+
+.back {
+    display: inline-block;
+
+    margin-bottom: 30px;
+
+    color: #b49343;
+}
+
+.back:hover {
+    color: #e0bd55;
+}
+
+
+/* TITLE */
+
+.quest-header {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.quest-header h1 {
+    margin: 0;
+
+    color: #e0bd55;
+
+    font-size: 42px;
+
+    letter-spacing: 3px;
+
+    text-shadow: 0 3px 10px #000;
+}
+
+.quest-type {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 6px 12px;
+
+    border: 1px solid #604b21;
+
+    border-radius: 4px;
+
+    color: #b49343;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* INFO */
+
+.quest-info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+.info-box {
+
+    padding: 20px;
+
+    background:
+        linear-gradient(145deg, #211d16, #10100e);
+
+    border: 1px solid #393124;
+
+    border-radius: 7px;
+}
+
+.info-title {
+
+    color: #806126;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.info-value {
+
+    color: #d7b451;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+/* SECTION */
+
+.section {
+
+    margin-top: 35px;
+}
+
+.section h2 {
+
+    color: #d7b451;
+
+    font-size: 27px;
+
+    border-bottom: 1px solid #393124;
+
+    padding-bottom: 10px;
+}
+
+
+/* CONTENT */
+
+.content-box {
+
+    padding: 25px;
+
+    background:
+        linear-gradient(145deg, #1c1914, #10100e);
+
+    border: 1px solid #393124;
+
+    border-radius: 7px;
+
+    color: #aaa294;
+
+    line-height: 1.8;
+}
+
+
+/* REWARDS */
+
+.rewards {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.reward {
+
+    padding: 12px 18px;
+
+    background: #17140f;
+
+    border: 1px solid #604b21;
+
+    border-radius: 5px;
+
+    color: #d7b451;
+}
+
+
+/* ERROR */
+
+.error {
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    color: #b49343;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .quest-header h1 {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div>
+
+        <a href="index.html">
+
+            <div class="logo">
+                ⚔ FUJI C1 WIKI
+            </div>
+
+            <div class="subtitle">
+                Lineage II · Chronicle 1 · x1
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="classes.html">
+            Classes
+        </a>
+
+        <a href="quests.html">
+            Quests
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+
+<a href="quests.html" class="back">
+    ← Back to Quest Database
+</a>
+
+
+<div id="content">
+
+    <div class="error">
+        Loading quest...
+    </div>
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+/* =========================
+   GET QUEST ID
+========================= */
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const questId =
+    params.get("id");
+
+
+/* =========================
+   LOAD DATABASE
+========================= */
+
+fetch("data/quests.json")
+
+.then(response => {
+
+    if (!response.ok) {
+        throw new Error(
+            "Could not load quests.json"
+        );
+    }
+
+    return response.json();
+
+})
+
+
+.then(quests => {
+
+    const quest =
+        quests.find(
+            q =>
+                String(q.id) ===
+                String(questId)
+        );
+
+    if (!quest) {
+
+        showError();
+
+        return;
+
+    }
+
+    renderQuest(quest);
+
+})
+
+
+.catch(error => {
+
+    console.error(error);
+
+    showError();
+
+});
+
+
+/* =========================
+   ERROR
+========================= */
+
+function showError() {
+
+    document.getElementById(
+        "content"
+    ).innerHTML = `
+
+        <div class="error">
+
+            Quest not found.
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================
+   RENDER QUEST
+========================= */
+
+function renderQuest(quest) {
+
+
+    document.title =
+        quest.name +
+        " | Fuji C1 Wiki";
+
+
+    const races =
+        quest.race &&
+        quest.race.length
+            ? quest.race.join(", ")
+            : "All";
+
+
+    const classes =
+        quest.classes &&
+        quest.classes.length
+            ? quest.classes.join(", ")
+            : "All";
+
+
+    const repeatable =
+        quest.repeatable
+            ? "Repeatable"
+            : "One Time";
+
+
+    const party =
+        quest.party || "Solo";
+
+
+    let rewardsHTML = "";
+
+
+    if (
+        quest.rewards &&
+        quest.rewards.length
+    ) {
+
+        rewardsHTML =
+            quest.rewards
+            .map(
+                reward => `
+
+                    <div class="reward">
+                        ${reward}
+                    </div>
+
+                `
+            )
+            .join("");
+
+    }
+
+    else {
+
+        rewardsHTML = `
+
+            <div class="reward">
+                Information coming soon
+            </div>
+
+        `;
+
+    }
+
+
+    document.getElementById(
+        "content"
+    ).innerHTML = `
+
+
+        <div class="quest-header">
+
+            <h1>
+                ${quest.name}
+            </h1>
+
+            <div class="quest-type">
+                ${quest.type}
+            </div>
+
+        </div>
+
+
+
+        <div class="quest-info">
+
+
+            <div class="info-box">
+
+                <div class="info-title">
+                    Level
+                </div>
+
+                <div class="info-value">
+                    ${quest.level}
+                </div>
+
+            </div>
+
+
+
+            <div class="info-box">
+
+                <div class="info-title">
+                    Race
+                </div>
+
+                <div class="info-value">
+                    ${races}
+                </div>
+
+            </div>
+
+
+
+            <div class="info-box">
+
+                <div class="info-title">
+                    Class
+                </div>
+
+                <div class="info-value">
+                    ${classes}
+                </div>
+
+            </div>
+
+
+
+            <div class="info-box">
+
+                <div class="info-title">
+                    Location
+                </div>
+
+                <div class="info-value">
+                    ${quest.location || "-"}
+                </div>
+
+            </div>
+
+
+
+            <div class="info-box">
+
+                <div class="info-title">
+                    NPC
+                </div>
+
+                <div class="info-value">
+                    ${quest.npc || "-"}
+                </div>
+
+            </div>
+
+
+
+            <div class="info-box">
+
+                <div class="info-title">
+                    Type
+                </div>
+
+                <div class="info-value">
+                    ${repeatable}
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>
+                Description
+            </h2>
+
+            <div class="content-box">
+
+                ${quest.description || "No description available."}
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>
+                Party
+            </h2>
+
+            <div class="content-box">
+
+                ${party}
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>
+                Rewards
+            </h2>
+
+            <div class="rewards">
+
+                ${rewardsHTML}
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>
+                Quest Walkthrough
+            </h2>
+
+            <div class="content-box">
+
+                Full quest steps will be added
+                from the C1 quest database.
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
