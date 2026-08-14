@@ -1,341 +1,887 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Fuji C1 Wiki</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            background:
-                radial-gradient(circle at top, #292015 0%, #11100e 45%, #080808 100%);
-            color: #d8d1c2;
-            font-family: Georgia, "Times New Roman", serif;
-            min-height: 100vh;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* HEADER */
-
-        header {
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 45px;
-
-            background: linear-gradient(
-                180deg,
-                #211c15,
-                #0d0d0c
-            );
-
-            border-bottom: 1px solid #8b6a28;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
-        }
-
-        .logo {
-            color: #d8b44a;
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            color: #8e8779;
-            font-size: 13px;
-            margin-top: 5px;
-        }
-
-        nav a {
-            margin-left: 28px;
-            color: #aaa294;
-            font-size: 15px;
-            transition: 0.2s;
-        }
-
-        nav a:hover {
-            color: #e0bd55;
-        }
-
-        /* LAYOUT */
-
-        .layout {
-            display: grid;
-            grid-template-columns: 230px 1fr;
-            max-width: 1400px;
-            margin: auto;
-            min-height: calc(100vh - 90px);
-        }
-
-        /* SIDEBAR */
-
-        aside {
-            padding: 35px 20px;
-
-            background: rgba(12, 12, 11, 0.75);
-
-            border-right: 1px solid #3d3424;
-        }
-
-        .side-title {
-            color: #d5af45;
-            font-size: 13px;
-            letter-spacing: 2px;
-            margin-bottom: 18px;
-        }
-
-        .side-link {
-            display: block;
-            padding: 12px 14px;
-            margin-bottom: 5px;
-
-            color: #aaa294;
-            border-left: 2px solid transparent;
 
-            transition: 0.2s;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .side-link:hover {
-            color: #e0bd55;
-            background: #191713;
-            border-left: 2px solid #b18b32;
-        }
+<title>Fuji C1 | Elven Mystic Wiki</title>
 
-        /* MAIN */
+<style>
 
-        main {
-            padding: 55px;
-        }
+/* =========================
+   GLOBAL
+========================= */
 
-        .hero {
-            padding: 55px 45px;
+* {
+    box-sizing: border-box;
+}
 
-            background:
-                linear-gradient(
-                    rgba(20, 17, 12, 0.88),
-                    rgba(10, 10, 9, 0.94)
-                );
+body {
 
-            border: 1px solid #604b21;
-            border-radius: 10px;
+    margin: 0;
 
-            box-shadow:
-                inset 0 0 50px rgba(0, 0, 0, 0.6),
-                0 10px 35px rgba(0, 0, 0, 0.45);
+    min-height: 100vh;
 
-            text-align: center;
-        }
+    background:
+        radial-gradient(
+            circle at top,
+            #292015 0%,
+            #11100e 45%,
+            #080808 100%
+        );
 
-        .hero h1 {
-            margin: 0;
+    color: #d8d1c2;
 
-            color: #e0bd55;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
 
-            font-size: 52px;
-            letter-spacing: 4px;
+a {
 
-            text-shadow: 0 3px 10px #000;
-        }
+    color: inherit;
 
-        .hero h2 {
-            margin: 10px 0 25px;
+    text-decoration: none;
+}
 
-            color: #928875;
-            font-size: 17px;
-            font-weight: normal;
-            letter-spacing: 3px;
-        }
 
-        .hero p {
-            max-width: 720px;
-            margin: auto;
+/* =========================
+   HEADER
+========================= */
 
-            line-height: 1.8;
-            color: #aaa294;
-        }
+header {
 
-        /* BUTTONS */
+    height: 90px;
 
-        .buttons {
-            margin-top: 35px;
+    display: flex;
 
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+    align-items: center;
 
-        .button {
-            padding: 13px 25px;
+    justify-content: space-between;
 
-            border: 1px solid #806126;
-            border-radius: 5px;
+    padding: 0 45px;
 
-            background: linear-gradient(#302719, #17140f);
+    background:
+        linear-gradient(
+            180deg,
+            #211c15,
+            #0d0d0c
+        );
 
-            color: #d7b451;
+    border-bottom:
+        1px solid #8b6a28;
 
-            transition: 0.2s;
-        }
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.7);
+}
 
-        .button:hover {
-            background: #3a301d;
-            border-color: #c09b3b;
-            transform: translateY(-2px);
-        }
+.logo {
 
-        /* CARDS */
+    color: #e0bd55;
 
-        .section-title {
-            margin: 50px 0 20px;
+    font-size: 30px;
 
-            color: #d8b44a;
-            font-size: 24px;
+    font-weight: bold;
 
-            border-bottom: 1px solid #40351f;
-            padding-bottom: 10px;
-        }
+    letter-spacing: 3px;
+}
 
-        .cards {
-            display: grid;
+.subtitle {
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(210px, 1fr));
+    margin-top: 5px;
 
-            gap: 18px;
-        }
+    color: #8e8779;
 
-        .card {
-            padding: 25px;
+    font-size: 13px;
 
-            background: linear-gradient(
-                145deg,
-                #1c1914,
-                #11110f
-            );
+    letter-spacing: 1px;
+}
 
-            border: 1px solid #393124;
-            border-radius: 8px;
+nav a {
 
-            transition: 0.2s;
-        }
+    margin-left: 28px;
 
-        .card:hover {
-            transform: translateY(-4px);
+    color: #aaa294;
 
-            border-color: #806126;
+    font-size: 15px;
 
-            box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.5);
-        }
+    transition: .2s;
+}
 
-        .card-icon {
-            font-size: 30px;
-            margin-bottom: 12px;
-        }
+nav a:hover {
 
-        .card h3 {
-            margin: 0 0 10px;
+    color: #e0bd55;
+}
 
-            color: #d7b451;
-            font-size: 19px;
-        }
 
-        .card p {
-            margin: 0;
+/* =========================
+   LAYOUT
+========================= */
 
-            color: #888276;
-            font-size: 14px;
-            line-height: 1.6;
-        }
+.layout {
 
-        /* FOOTER */
+    display: grid;
 
-        footer {
-            text-align: center;
+    grid-template-columns:
+        230px 1fr;
 
-            padding: 30px;
+    max-width: 1500px;
 
-            color: #5f5a51;
+    margin: auto;
 
-            border-top: 1px solid #29251e;
+    min-height:
+        calc(100vh - 90px);
+}
 
-            font-size: 13px;
-        }
 
-        /* MOBILE */
+/* =========================
+   SIDEBAR
+========================= */
 
-        @media (max-width: 800px) {
+aside {
 
-            header {
-                height: auto;
-                padding: 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
+    padding: 35px 20px;
 
-            nav a {
-                margin: 0 8px;
-            }
+    background:
+        rgba(12,12,11,.75);
 
-            .layout {
-                grid-template-columns: 1fr;
-            }
+    border-right:
+        1px solid #3d3424;
+}
 
-            aside {
-                display: none;
-            }
+.side-title {
 
-            main {
-                padding: 20px;
-            }
+    color: #d5af45;
 
-            .hero {
-                padding: 40px 20px;
-            }
+    font-size: 13px;
 
-            .hero h1 {
-                font-size: 36px;
-            }
-        }
+    letter-spacing: 2px;
 
-    </style>
+    margin-bottom: 18px;
+}
+
+.side-link {
+
+    display: block;
+
+    padding: 12px 14px;
+
+    margin-bottom: 5px;
+
+    color: #aaa294;
+
+    border-left:
+        2px solid transparent;
+
+    transition: .2s;
+}
+
+.side-link:hover {
+
+    color: #e0bd55;
+
+    background: #191713;
+
+    border-left:
+        2px solid #b18b32;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+
+    padding: 55px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    padding:
+        60px 40px;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(20,17,12,.90),
+            rgba(10,10,9,.96)
+        );
+
+    border:
+        1px solid #604b21;
+
+    border-radius: 10px;
+
+    box-shadow:
+
+        inset 0 0 50px
+        rgba(0,0,0,.6),
+
+        0 10px 35px
+        rgba(0,0,0,.45);
+}
+
+.hero h1 {
+
+    margin: 0;
+
+    color: #e0bd55;
+
+    font-size: 54px;
+
+    letter-spacing: 7px;
+
+    text-shadow:
+        0 3px 10px #000;
+}
+
+.hero h2 {
+
+    margin:
+        10px 0 20px;
+
+    color: #928875;
+
+    font-size: 17px;
+
+    font-weight: normal;
+
+    letter-spacing: 4px;
+}
+
+.hero p {
+
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #aaa294;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding:
+        13px 28px;
+
+    background:
+        linear-gradient(
+            #302719,
+            #17140f
+        );
+
+    border:
+        1px solid #806126;
+
+    border-radius: 5px;
+
+    color: #d7b451;
+
+    transition: .2s;
+}
+
+.button:hover {
+
+    background: #3a301d;
+
+    border-color: #c09b3b;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+
+    margin:
+        55px 0 25px;
+
+    padding-bottom: 10px;
+
+    color: #d8b44a;
+
+    font-size: 25px;
+
+    border-bottom:
+        1px solid #40351f;
+}
+
+
+/* =========================
+   CLASS TREE
+========================= */
+
+.class-tree {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    height: 470px;
+
+    margin:
+        20px auto 40px;
+}
+
+
+/* CLASS BOX */
+
+.class-box {
+
+    position: absolute;
+
+    width: 230px;
+
+    min-height: 100px;
+
+    padding: 22px 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #211d16,
+            #100f0d
+        );
+
+    border:
+        1px solid #806126;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.55);
+
+    transition: .25s;
+
+    z-index: 5;
+}
+
+.class-box:hover {
+
+    transform:
+        translateY(-6px)
+        scale(1.03);
+
+    border-color:
+        #d0a83f;
+
+    box-shadow:
+
+        0 12px 35px
+        rgba(0,0,0,.8),
+
+        0 0 20px
+        rgba(184,143,48,.12);
+}
+
+.class-icon {
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.class-name {
+
+    color: #e0bd55;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.class-info {
+
+    margin-top: 6px;
+
+    color: #80796c;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   TREE POSITIONS
+========================= */
+
+.mystic {
+
+    top: 15px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+.wizard {
+
+    top: 190px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+.spellsinger {
+
+    top: 350px;
+
+    left: 18%;
+}
+
+.summoner {
+
+    top: 350px;
+
+    right: 18%;
+}
+
+
+/* Keep hover transform correct */
+
+.mystic:hover,
+.wizard:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-6px)
+        scale(1.03);
+}
+
+
+/* =========================
+   CONNECTION LINES
+========================= */
+
+.tree-line {
+
+    position: absolute;
+
+    background: #806126;
+
+    z-index: 1;
+
+    box-shadow:
+        0 0 5px
+        rgba(184,143,48,.25);
+}
+
+
+/* Mystic -> Wizard */
+
+.line-main {
+
+    width: 2px;
+
+    height: 75px;
+
+    top: 115px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* Wizard vertical */
+
+.line-middle {
+
+    width: 2px;
+
+    height: 55px;
+
+    top: 290px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* Horizontal branch */
+
+.line-branch {
+
+    width: 470px;
+
+    height: 2px;
+
+    top: 345px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* Left diagonal */
+
+.line-left {
+
+    width: 2px;
+
+    height: 90px;
+
+    top: 345px;
+
+    left: calc(50% - 235px);
+
+    transform:
+        rotate(35deg);
+
+    transform-origin:
+        top center;
+}
+
+
+/* Right diagonal */
+
+.line-right {
+
+    width: 2px;
+
+    height: 90px;
+
+    top: 345px;
+
+    left: calc(50% + 235px);
+
+    transform:
+        rotate(-35deg);
+
+    transform-origin:
+        top center;
+}
+
+
+/* =========================
+   DATABASE CARDS
+========================= */
+
+.database-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px, 1fr)
+        );
+
+    gap: 18px;
+}
+
+.database-card {
+
+    padding: 25px;
+
+    min-height: 150px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #1c1914,
+            #11110f
+        );
+
+    border:
+        1px solid #393124;
+
+    border-radius: 8px;
+
+    transition: .2s;
+}
+
+.database-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #806126;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.5);
+}
+
+.database-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.database-card h3 {
+
+    margin:
+        0 0 10px;
+
+    color: #d7b451;
+
+    font-size: 19px;
+}
+
+.database-card p {
+
+    margin: 0;
+
+    color: #888276;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PROGRESSION
+========================= */
+
+.progression {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.progress-step {
+
+    padding: 20px;
+
+    text-align: center;
+
+    background:
+        #15130f;
+
+    border:
+        1px solid #393124;
+
+    border-radius: 6px;
+}
+
+.progress-level {
+
+    color: #806126;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.progress-name {
+
+    margin-top: 8px;
+
+    color: #d7b451;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #5f5a51;
+
+    border-top:
+        1px solid #29251e;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    header {
+
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav a {
+
+        margin:
+            0 8px;
+    }
+
+    .layout {
+
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+
+        display: none;
+    }
+
+    main {
+
+        padding: 20px;
+    }
+
+    .hero {
+
+        padding:
+            45px 20px;
+    }
+
+    .hero h1 {
+
+        font-size: 38px;
+
+        letter-spacing: 4px;
+    }
+
+    .class-tree {
+
+        height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+    }
+
+    .class-box {
+
+        position: relative;
+
+        top: auto !important;
+
+        left: auto !important;
+
+        right: auto !important;
+
+        transform: none !important;
+    }
+
+    .tree-line {
+
+        display: none;
+    }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
     <div>
-        <div class="logo">⚔ FUJI C1 WIKI</div>
+
+        <div class="logo">
+            ⚔ FUJI C1
+        </div>
 
         <div class="subtitle">
-            Lineage II · Chronicle 1 · x1
+            ELVEN MYSTIC WIKI · CHRONICLE 1 · x1
         </div>
+
     </div>
 
 
     <nav>
 
-        <a href="index.html">Home</a>
-        <a href="classes.html">Classes</a>
-        <a href="quests.html">Quests</a>
-        <a href="guides.html">Guides</a>
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="quests.html">
+            Quests
+        </a>
+
+        <a href="guides.html">
+            Guides
+        </a>
 
     </nav>
 
@@ -346,211 +892,462 @@
 <div class="layout">
 
 
-    <aside>
+<!-- =========================
+     SIDEBAR
+========================= -->
 
-        <div class="side-title">
-            DATABASE
+<aside>
+
+    <div class="side-title">
+        ELVEN MYSTIC
+    </div>
+
+
+    <a
+        class="side-link"
+        href="#class-tree"
+    >
+        ✨ Class Progression
+    </a>
+
+
+    <a
+        class="side-link"
+        href="quests.html"
+    >
+        📜 Quests
+    </a>
+
+
+    <a
+        class="side-link"
+        href="#skills"
+    >
+        🔮 Skills
+    </a>
+
+
+    <a
+        class="side-link"
+        href="#equipment"
+    >
+        ⚔ Equipment
+    </a>
+
+
+    <a
+        class="side-link"
+        href="#leveling"
+    >
+        📖 Leveling
+    </a>
+
+
+    <div
+        class="side-title"
+        style="margin-top:35px;"
+    >
+        DATABASE
+    </div>
+
+
+    <a
+        class="side-link"
+        href="quests.html"
+    >
+        📜 Quest Database
+    </a>
+
+
+    <a
+        class="side-link"
+        href="guides.html"
+    >
+        🗺 Hunting Zones
+    </a>
+
+</aside>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <h1>
+        FUJI C1
+    </h1>
+
+
+    <h2>
+        ELVEN MYSTIC · CHRONICLE 1 · x1
+    </h2>
+
+
+    <p>
+
+        The dedicated Chronicle 1 database
+        for Elven Mystic players.
+
+        Follow your complete journey from
+        Elven Mystic to your final profession,
+        discover your quests, skills,
+        equipment and leveling routes.
+
+    </p>
+
+
+    <a
+        class="button"
+        href="#class-tree"
+    >
+        ✨ START YOUR JOURNEY
+    </a>
+
+</section>
+
+
+
+<!-- =========================
+     CLASS TREE
+========================= -->
+
+<h2
+    id="class-tree"
+    class="section-title"
+>
+    Class Progression
+</h2>
+
+
+<div class="class-tree">
+
+
+    <!-- LINES -->
+
+    <div
+        class="tree-line line-main"
+    ></div>
+
+
+    <div
+        class="tree-line line-middle"
+    ></div>
+
+
+    <div
+        class="tree-line line-branch"
+    ></div>
+
+
+    <div
+        class="tree-line line-left"
+    ></div>
+
+
+    <div
+        class="tree-line line-right"
+    ></div>
+
+
+
+    <!-- MYSTIC -->
+
+    <a
+        class="class-box mystic"
+        href="class.html?name=Elven%20Mystic"
+    >
+
+        <div class="class-icon">
+            ✨
         </div>
 
-        <a class="side-link" href="classes.html">
-            ⚔ Classes
-        </a>
-
-        <a class="side-link" href="quests.html">
-            📜 Quests
-        </a>
-
-        <a class="side-link" href="#">
-            🧙 NPCs
-        </a>
-
-        <a class="side-link" href="#">
-            🗺 Locations
-        </a>
-
-        <a class="side-link" href="#">
-            ⚔ Weapons
-        </a>
-
-        <a class="side-link" href="#">
-            🛡 Armor
-        </a>
-
-        <a class="side-link" href="#">
-            💎 Items
-        </a>
-
-
-        <div class="side-title" style="margin-top:35px;">
-            GUIDES
+        <div class="class-name">
+            Elven Mystic
         </div>
 
-        <a class="side-link" href="guides.html">
-            📖 Leveling Guides
-        </a>
-
-        <a class="side-link" href="#">
-            💰 Adena
-        </a>
-
-        <a class="side-link" href="#">
-            🏹 Hunting Zones
-        </a>
-
-    </aside>
-
-
-
-    <main>
-
-
-        <section class="hero">
-
-            <h1>FUJI C1</h1>
-
-            <h2>LINEAGE II · CHRONICLE 1</h2>
-
-            <p>
-                Welcome to the Fuji C1 Wiki — a complete Chronicle 1
-                database created specifically for x1 gameplay.
-                Explore classes, quests, items, NPCs and the world of
-                Aden.
-            </p>
-
-
-            <div class="buttons">
-
-                <a class="button" href="classes.html">
-                    ⚔ Explore Classes
-                </a>
-
-                <a class="button" href="quests.html">
-                    📜 Quest Database
-                </a>
-
-                <a class="button" href="guides.html">
-                    📖 Leveling Guides
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <h2 class="section-title">
-            Explore Fuji C1
-        </h2>
-
-
-        <div class="cards">
-
-
-            <a class="card" href="classes.html">
-
-                <div class="card-icon">⚔️</div>
-
-                <h3>Classes</h3>
-
-                <p>
-                    Explore all C1 races, classes and
-                    class progression.
-                </p>
-
-            </a>
-
-
-
-            <a class="card" href="quests.html">
-
-                <div class="card-icon">📜</div>
-
-                <h3>Quests</h3>
-
-                <p>
-                    Find quests by level, race and class.
-                </p>
-
-            </a>
-
-
-
-            <a class="card" href="#">
-
-                <div class="card-icon">🗺️</div>
-
-                <h3>World of Aden</h3>
-
-                <p>
-                    Explore towns, hunting zones and
-                    important locations.
-                </p>
-
-            </a>
-
-
-
-            <a class="card" href="#">
-
-                <div class="card-icon">🧙</div>
-
-                <h3>NPC Database</h3>
-
-                <p>
-                    Find NPCs, shops, trainers and
-                    quest givers.
-                </p>
-
-            </a>
-
-
-
-            <a class="card" href="#">
-
-                <div class="card-icon">⚔️</div>
-
-                <h3>Items</h3>
-
-                <p>
-                    Weapons, armor, accessories and
-                    useful C1 items.
-                </p>
-
-            </a>
-
-
-
-            <a class="card" href="guides.html">
-
-                <div class="card-icon">📖</div>
-
-                <h3>Guides</h3>
-
-                <p>
-                    Leveling routes, farming guides
-                    and useful C1 information.
-                </p>
-
-            </a>
-
-
+        <div class="class-info">
+            Starting Class
         </div>
 
+    </a>
 
-    </main>
+
+
+    <!-- WIZARD -->
+
+    <a
+        class="class-box wizard"
+        href="class.html?name=Elven%20Wizard"
+    >
+
+        <div class="class-icon">
+            🔮
+        </div>
+
+        <div class="class-name">
+            Elven Wizard
+        </div>
+
+        <div class="class-info">
+            1st Profession
+        </div>
+
+    </a>
+
+
+
+    <!-- SPELLSINGER -->
+
+    <a
+        class="class-box spellsinger"
+        href="class.html?name=Spellsinger"
+    >
+
+        <div class="class-icon">
+            ❄️
+        </div>
+
+        <div class="class-name">
+            Spellsinger
+        </div>
+
+        <div class="class-info">
+            2nd Profession
+        </div>
+
+    </a>
+
+
+
+    <!-- SUMMONER -->
+
+    <a
+        class="class-box summoner"
+        href="class.html?name=Elemental%20Summoner"
+    >
+
+        <div class="class-icon">
+            🐉
+        </div>
+
+        <div class="class-name">
+            Elemental Summoner
+        </div>
+
+        <div class="class-info">
+            2nd Profession
+        </div>
+
+    </a>
+
 
 </div>
 
 
 
+<!-- =========================
+     PROGRESSION
+========================= -->
+
+<h2 class="section-title">
+    Your Journey
+</h2>
+
+
+<div class="progression">
+
+
+    <div class="progress-step">
+
+        <div class="progress-level">
+            LEVEL 1
+        </div>
+
+        <div class="progress-name">
+            Elven Mystic
+        </div>
+
+    </div>
+
+
+    <div class="progress-step">
+
+        <div class="progress-level">
+            LEVEL 20
+        </div>
+
+        <div class="progress-name">
+            Elven Wizard
+        </div>
+
+    </div>
+
+
+    <div class="progress-step">
+
+        <div class="progress-level">
+            LEVEL 40
+        </div>
+
+        <div class="progress-name">
+            Final Profession
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================
+     DATABASE
+========================= -->
+
+<h2 class="section-title">
+    Elven Mystic Database
+</h2>
+
+
+<div class="database-grid">
+
+
+    <!-- QUESTS -->
+
+    <a
+        class="database-card"
+        href="quests.html"
+    >
+
+        <div class="database-icon">
+            📜
+        </div>
+
+        <h3>
+            Quests
+        </h3>
+
+        <p>
+            Explore Elven Mystic,
+            profession change and
+            class-related quests.
+        </p>
+
+    </a>
+
+
+
+    <!-- SKILLS -->
+
+    <a
+        class="database-card"
+        id="skills"
+        href="#"
+    >
+
+        <div class="database-icon">
+            🔮
+        </div>
+
+        <h3>
+            Skills
+        </h3>
+
+        <p>
+            C1 skills organized by
+            class and level.
+        </p>
+
+    </a>
+
+
+
+    <!-- EQUIPMENT -->
+
+    <a
+        class="database-card"
+        id="equipment"
+        href="#"
+    >
+
+        <div class="database-icon">
+            ⚔️
+        </div>
+
+        <h3>
+            Equipment
+        </h3>
+
+        <p>
+            Weapons, robes, jewelry
+            and recommended equipment
+            for C1 x1.
+        </p>
+
+    </a>
+
+
+
+    <!-- LEVELING -->
+
+    <a
+        class="database-card"
+        id="leveling"
+        href="guides.html"
+    >
+
+        <div class="database-icon">
+            📖
+        </div>
+
+        <h3>
+            Leveling Guide
+        </h3>
+
+        <p>
+            Leveling routes,
+            hunting zones and
+            useful C1 information.
+        </p>
+
+    </a>
+
+
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-    Fuji C1 Wiki · Chronicle 1 · x1
+    Fuji C1 · Elven Mystic Wiki
+
+    <br>
+
+    Lineage II · Chronicle 1 · x1
 
 </footer>
+
+
+</main>
+
+</div>
 
 
 </body>
 
 </html>
-```
